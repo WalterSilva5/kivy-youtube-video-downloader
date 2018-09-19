@@ -1,0 +1,47 @@
+<GerenciadorDeTelas>:
+    TelaPrincipal:
+        name:"TelaPrincipal"
+
+<TelaPrincipal>:
+    FloatLayout:
+        Label:
+            text:"[b]Insira o link do video[/b]"
+            size_hint: None, None
+            size: 100, 30
+            pos_hint: None, None
+            pos_hint: {"x": .35, "y":.85}
+            markup: True
+
+        TextInput:
+            id: entradaUrl
+            font_size: 15
+            size_hint: None, None
+            size: 280, 30
+            pos_hint: None, None
+            pos_hint: {"x": .02, "y":.78}
+            multiline: False
+
+        Button:
+            size_hint: None, None
+            size: 100, 30
+            pos_hint: None, None
+            pos_hint: {"x": .6, "y":.7}
+            text:"Baixar Agora"
+            on_press: app.baixarVideo(entradaUrl.text)
+
+        ProgressBar:
+            id: barraDeProgresso
+            size_hint: None, None
+            size: 250, 100
+            pos_hint: None, None
+            pos_hint: {"x": .07, "y":.55}
+
+        Label:
+            id: labelMensagem
+            text: "A barra de progresso\nta com erro\ndepois resolvo"
+            size_hint: None, None
+            size: 100, 30
+            font_size: 30
+            pos_hint: None, None
+            pos_hint: {"x": .35, "y":.4}
+            markup: True
